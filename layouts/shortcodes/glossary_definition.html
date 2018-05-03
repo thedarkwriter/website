@@ -18,7 +18,12 @@
 {{- end -}}
 {{- if (strings.Contains "all|long" $length) -}}
 {{- with .Content -}}
-{{- if $prepend }}{{- replace . "<p>" (printf "<P>%s %s" $prepend .) -}}{{ else }}{{- . -}}{{ end -}}
+{{- if $prepend }}
+{{- $firstPara := index (findRE "(?s)<p>.*?</p>" . 1) 0 -}}
+{{- $firstPara := $firstPara | strings.TrimSuffix "</p>" | strings.TrimPrefix "<p>" -}}
+{{- $first := slicestr $firstPara 0 1 | lower }}
+{{- $prepended := printf "<p>%s %s%s</p>"  $prepend $first (slicestr $firstPara 1) -}}
+{{- replace . $firstPara $prepended | safeHTML -}}{{ else }}{{- . -}}{{ end -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
