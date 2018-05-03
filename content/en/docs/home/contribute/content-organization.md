@@ -71,6 +71,8 @@ If you want a section or page to not be listed, set the `toc_hide` flag in front
 toc_hide: true
 ```
 
+When you navigate to a section, the page shown is the section page (e.g. `_index.md`) if it has content, else the first page inside that section.
+
 ### Documentation Browser
 
 The page browser on the documentation home page is built from all sections and pages directly below the `docs section`.
@@ -125,4 +127,4 @@ Some important notes to the files in the bundles:
 ## Styles
 
 The `SASS` source of the stylesheets for this site is stored below `src/sass` and can be built with `make sass` (note that Hugo will get `SASS` support soon, see https://github.com/gohugoio/hugo/issues/4243).
- 
+
