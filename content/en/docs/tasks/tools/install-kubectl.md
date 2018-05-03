@@ -116,10 +116,10 @@ kubectl can be installed as part of the Google Cloud SDK.
 
     To download a specific version, replace the `$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)` portion of the command with the specific version.
 
-    For example, to download version {{page.fullversion}} on MacOS, type:
+    For example, to download version {{< param "fullversion" >}} on MacOS, type:
 		  
     ```
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/{{page.fullversion}}/bin/darwin/amd64/kubectl
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/{{< param "fullversion" >}}/bin/darwin/amd64/kubectl
     ```
 
 2. Make the kubectl binary executable.
@@ -144,10 +144,10 @@ kubectl can be installed as part of the Google Cloud SDK.
 
     To download a specific version, replace the `$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)` portion of the command with the specific version.
 
-    For example, to download version {{page.fullversion}} on Linux, type:
+    For example, to download version {{< param "fullversion" >}} on Linux, type:
     
     ```
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/{{page.fullversion}}/bin/linux/amd64/kubectl
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/{{< param "fullversion" >}}/bin/linux/amd64/kubectl
     ```
 
 2. Make the kubectl binary executable.
@@ -163,12 +163,12 @@ kubectl can be installed as part of the Google Cloud SDK.
     ```
 {{% /tab %}}
 {{% tab  name="win" %}}
-1. Download the latest release {{page.fullversion}} from [this link](https://storage.googleapis.com/kubernetes-release/release/{{page.fullversion}}/bin/windows/amd64/kubectl.exe).
+1. Download the latest release {{< param "fullversion" >}} from [this link](https://storage.googleapis.com/kubernetes-release/release/{{< param "fullversion" >}}/bin/windows/amd64/kubectl.exe).
 
     Or if you have `curl` installed, use this command:
 
     ```
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/{{page.fullversion}}/bin/windows/amd64/kubectl.exe
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/{{< param "fullversion" >}}/bin/windows/amd64/kubectl.exe
     ```
 
     To find out the latest stable version (for example, for scripting), take a look at [https://storage.googleapis.com/kubernetes-release/release/stable.txt](https://storage.googleapis.com/kubernetes-release/release/stable.txt).
